@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*- 
 
 import os
-from grid-dictionnary import *
+from grid_dictionnary import *
 
 #Présente de façon visuelle une grille
 def grid_disp(g): #g est de dimension 9*9
@@ -269,7 +269,7 @@ if __name__ == '__main__':
     #print(generate_candidat_grid(sudoku1))
     grid = generate_candidat_grid(extrem)
     #print(grid)
-    solve2(grid)
+    naive(grid)
     all_square = [(0,0),(0,1),(0,2),(1,0),(1,1),(1,2),(2,0),(2,1),(2,2)]
     '''for i in range(10):
         (grid, square_change)= local_refresh_grid(grid, all_square)
