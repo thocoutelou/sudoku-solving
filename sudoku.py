@@ -1,26 +1,8 @@
 #! /usr/bin/env python
 # -*- coding: utf-8 -*- 
 
-import os
+from grid_printer import *
 from grid_dictionnary import *
-
-#Présente de façon visuelle une grille
-def grid_disp(g): #g est de dimension 9*9
-    for i in range(3):
-        for j in range(3):
-            tmp=""
-            for k in range(9):
-                if type(g[3*i+j][k]) == int:
-                    tmp=tmp+str(g[3*i+j][k])+" "
-                else:
-                    tmp = tmp + "  "
-                if(k==2 or k==5):
-                    tmp=tmp+"| "
-            print(tmp)
-            #print(g[3*i+j])
-        if(i<=1):
-            print("---------------------")
-    print(" ")
 
 #Génère la grille de travail avec les différents candidats
 def generate_candidat_grid(enonce):
@@ -269,7 +251,7 @@ if __name__ == '__main__':
     #print(generate_candidat_grid(sudoku1))
     grid = generate_candidat_grid(extrem)
     #print(grid)
-    naive(grid)
+    solve2(grid)
     all_square = [(0,0),(0,1),(0,2),(1,0),(1,1),(1,2),(2,0),(2,1),(2,2)]
     '''for i in range(10):
         (grid, square_change)= local_refresh_grid(grid, all_square)
